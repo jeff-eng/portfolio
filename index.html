@@ -16,19 +16,27 @@
             <li><a href="#">Projects</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="http://twitter.com/elev8eng">Twitter</a></li>
             <li><a href="https://github.com/jeff-eng">GitHub</a></li>
           </ul>
         </nav>
-        <section id="projects">
+        <section id="articles">
           <article class="template" data-category="cat">
+            <header>
               <h1>Title</h1>
+              <div class="byline">
+                By <address>Author Name</address>
+                published <time pubdate datetime="2000-01-01">Publish Time</time>
+              </div>
+            </header>
+            <section class="article-body"></section>
+          </article>
         </section>
-            <section class="projects-body"></section>
     </main>
     <footer>
       &copy; 2016 Jeff Eng
     </footer>
-    <script type="text/javascript" src="project.js"></script>
+    <script type="text/javascript" src="vendor/scripts/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="scripts/projectdata.js"></script>
+    <script type="text/javascript" src="scripts/project.js"></script>
   </body>
 </html>
