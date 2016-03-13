@@ -1,3 +1,9 @@
 .template {
   display: none;
 }
+
+.navigation-list li {
+  list-style-type: none;
+  display: inline;
+  padding: 1%;
+}

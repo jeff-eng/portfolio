@@ -1,4 +1,4 @@
-var rawData = [
+var projectData = [
   {
     projectName:   'Mic Check',
     category:      'Team',
