@@ -14,9 +14,16 @@ projectView.handleMainNav = function() {
 projectView.populateFilters = function() {
   $('article').each(function() {
     if(!$(this).hasClass('template')) {
-      var value = $(this).find('span').text();
-      var optionEl = 'option value="' + value + '">' + value + '</option>';
-      $('#category-filter').append(optionEl);
+      var value = $(this).attr('data-category');
+      var optionEl = '<option value="' + value + '">' + value + '</option>';
+      if($('#category-filter option[value="' + value + '"]').length === 0) {
+        $('#category-filter').append(optionEl);
+      }
+      value = $(this).find('h3').text();
+      optionEl = '<option value="' + value + '">' + value + '</option>';
+      if($('#projectname-filter option[value="' + value + '"]').length === 0) {
+        $('#projectname-filter').append(optionEl);
+      }
     }
   });
 };
@@ -34,7 +41,7 @@ projectView.populateFilters = function() {
 //Calls all the functions once the DOM has loaded
 $(document).ready(function() {
   projectView.populateFilters();
-  projectView.handleCategoryFilter();
-  projectView.handleProjectNameFilter();
+  // projectView.handleCategoryFilter();
+  // projectView.handleProjectNameFilter();
   projectView.handleMainNav();
 });
