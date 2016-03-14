@@ -1,5 +1,8 @@
 * {
   font-family: 'Lato', sans-serif;
+
+  /*USING THIS TEMPORARILY TO VISUALIZE ELEMENTS ON PAGE*/
+  outline: 2px orange dotted;
 }
 
 p {
@@ -10,6 +13,25 @@ footer {
   text-align: center;
 }
 
+body {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+.contact-section {
+  list-style-type: none;
+  margin-left: 5px;
+  line-height: 5px;
+}
+
+.contact-section a {
+  margin-left: 10px;
+}
 /*-----LINK STYLING-----*/
 a, a:link, a:active {
   text-decoration: none;
@@ -21,4 +43,5 @@ a:hover {
 
 a:visited {
   text-decoration: none;
+  color: none;
 }
