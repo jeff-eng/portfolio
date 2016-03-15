@@ -1,0 +1,22 @@
+.template {
+  display: none;
+}
+
+.navigation-list li {
+  list-style-type: none;
+  display: inline;
+  padding: 1%;
+  color: #52FFB8;
+}
+
+.top-header {
+  margin-top: -20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1098F7;
+  padding-left: 5%;
+}
+
+.social-links li {
+  padding: 3px;
+}
