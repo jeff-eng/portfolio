@@ -1,8 +1,9 @@
 * {
   font-family: 'Lato', sans-serif;
+  color: #424242;
 
   /*USING THIS TEMPORARILY TO VISUALIZE ELEMENTS ON PAGE*/
-  outline: 2px orange dotted;
+  /*outline: 2px orange dotted;*/
 }
 
 p {
