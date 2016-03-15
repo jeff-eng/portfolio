@@ -11,6 +11,7 @@ Project.prototype.toHtml = function() {
   $newArticle.removeClass('template');
 
   $newArticle.attr('data-category', this.category);
+  $newArticle.attr('data-project', this.projectName);
   $newArticle.find('h3').html(this.projectName);
   $newArticle.find('span').html(this.developer);
   $newArticle.find('.article-body').html(this.body);

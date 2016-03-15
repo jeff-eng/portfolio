@@ -28,20 +28,38 @@ projectView.populateFilters = function() {
   });
 };
 
-// //Filters the projects by individual or team categories
-// projectView.handleCategoryFilter = function() {
-//   $()
-// };
-//
-// //Filters the projects by project name
-// projectView.handleProjectNameFilter = function() {
-//
-// };
+//Filters the projects by individual or team categories
+projectView.handleCategoryFilter = function() {
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      $('article').hide();
+      $('article[data-category="' + $(this).val() + '"]').fadeIn();
+    } else {
+      $('article').fadeIn();
+      $('article.template').hide();
+    }
+    $('#projectname-filter').val('');
+  });
+};
+
+//Filters the projects by project name
+projectView.handleProjectNameFilter = function() {
+  $('#projectname-filter').on('change', function() {
+    if ($(this).val()) {
+      $('article').hide();
+      $('article[data-project="' + $(this).val() + '"]').fadeIn();
+    } else {
+      $('article').fadeIn();
+      $('article.template').hide();
+    }
+    $('#category-filter').val('');
+  });
+};
 
 //Calls all the functions once the DOM has loaded
 $(document).ready(function() {
   projectView.populateFilters();
-  // projectView.handleCategoryFilter();
-  // projectView.handleProjectNameFilter();
+  projectView.handleCategoryFilter();
+  projectView.handleProjectNameFilter();
   projectView.handleMainNav();
 });
