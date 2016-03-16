@@ -47,7 +47,7 @@ projectView.handleProjectNameFilter = function() {
   $('#projectname-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $('article[data-project="' + $(this).val() + '"]').fadeIn();
+      $('article[data-projectname="' + $(this).val() + '"]').fadeIn();
     } else {
       $('article').fadeIn();
       $('article.template').hide();

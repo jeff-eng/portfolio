@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
+    <script id="project-template" type="text/x-handlebars-template">
+      <article data-category="{{category}}" data-projectname="{{projectName}}">
+        <header>
+          <h3><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
+          <div class="byline">
+            Developed by <span>{{developer}}</span>
+            <time pubdate datetime="{{createdOn}}">{{publishtime}}</time>
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+      </article>
+    </script>
   </head>
   <body>
     <main>
@@ -44,16 +56,6 @@
               </select>
             </li>
           </ul>
-        <article class="template" data-category="cat" data-projectname="project">
-          <header>
-            <h3>Title</h3>
-            <div class="byline">
-              Developed by <span>Author Name</span>
-              <time pubdate datetime="2000-01-01">Publish Time</time>
-            </div>
-          </header>
-          <section class="article-body"></section>
-        </article>
       </section>
       <section id="contact" class="tab-sections contact-section">
         <h2>Contact Information</h2>
@@ -77,6 +79,7 @@
       &copy; 2016 Jeff Eng
     </footer>
     <script type="text/javascript" src="vendor/scripts/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="vendor/scripts/handlebars-v4.0.5.js"></script>
     <script type="text/javascript" src="scripts/projectData.js"></script>
     <script type="text/javascript" src="scripts/project.js"></script>
     <script type="text/javascript" src="scripts/projectView.js"></script>
