@@ -20,3 +20,12 @@
 .social-links li {
   padding: 3px;
 }
+
+.contact-section {
+  margin-left: 5px;
+  line-height: 5px;
+}
+
+.contact-section a {
+  margin-left: 10px;
+}
