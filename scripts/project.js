@@ -1,11 +1,12 @@
 (function(module) {
-  var projects = [];
 
   function Project(opts) { //Project object constructor function
     for (var key in opts) {
       this[key] = opts[key];
     }
   }
+
+  Project.all = [];
 
   Project.prototype.toHtml = function() {
     var template = Handlebars.compile($('#project-template').html());
@@ -23,14 +24,9 @@
         localStorage.rawData = JSON.stringify(jsonData); //rewriting localStorage with new data
         callbackFunction(); //call the callbackFunction
       });
-      
+
     }
   };
-
-
-  // projects.forEach(function(a){
-  //   $('#projects').append(a.toHtml());
-  // });
 
   //Create a Project.loadAll method (loadAll is just making all the articles)
   function loadAll(projectdata) {
@@ -39,8 +35,8 @@
     });
 
     projectdata.forEach(function(ele) { //
-      projects.push(new Project(ele)); // here a new project is being instantiated with the
+      Project.all.push(new Project(ele)); // here a new project is being instantiated with the
     });
   }
-
+  module.Project = Project; // attaching the Project constructor to the module(window) to expose it to the global space
 })(window); //we need to pass in the window object to this IIFE to give the IIFE access to global variables
