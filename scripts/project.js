@@ -27,23 +27,18 @@
         loadAll(parsedJSON); //call loadAll function and pass in data from local storage
         callback(); //call the callback function
       } else { //If localStorage data doesn't exist, get the data from the JSON file.
-        // $.getJSON('/data/projectdata.json', function(jsonData, status, xhr) {
-        //   var currentEtag = xhr.getResponseHeader('ETag'); //grabbing current ETag and caching
-        //   var storedEtag = localStorage.getItem('etag'); //retrieving localStorage ETag and caching
         console.log('Retrieved data from json file');
         storedEtag = xhr.getResponseHeader('ETag'); //retrieve ETag from XHR object
         loadAll(rawData); //calling the loadAll function and passing in the raw data
-        //*Cache in localStorage to skip the server call:
+        //Cache in localStorage to skip the server call:
         var storedData = JSON.stringify(rawData); //Stringify raw data in JSON format
         localStorage.setItem('rawData', storedData); //Stores stringified data in localStorage
         localStorage.setItem('etag', storedEtag); //Set the ETag from XHR object as new localStorage ETag
-
         callback(); //call the callback function
       }
     });
   };
 
-  //Create a Project.loadAll method (loadAll is just making all the articles)
   function loadAll(projectdata) {
     projectdata.sort(function(a, b) { //sorts projects from newest to oldest
       return (new Date(b.createdOn)) - (new Date(a.createdOn));
