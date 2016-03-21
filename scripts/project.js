@@ -14,18 +14,33 @@
     return template(this);
   };
 
-  Project.fetchAll = function(callbackFunction) {
-    if (localStorage.rawData) { //If localStorage exists, then we need to retrieve it from localStorage instead of having to go out the server to retrieve the data everytime.
-      loadAll(JSON.parse(localStorage.rawData));
-      callbackFunction(); //call the callbackFunction
-    } else {  //If localStorage doesn't exist, get it from the JSON file.
-      $.getJSON('/data/projectdata.json', function(jsonData) {
-        loadAll(jsonData); //calling the loadAll function and passing in the json data
-        localStorage.rawData = JSON.stringify(jsonData); //rewriting localStorage with new data
-        callbackFunction(); //call the callbackFunction
-      });
+  Project.fetchAll = function(callback) {
+    $.getJSON('/data/projectdata.json', function(rawData, status, xhr) {
+      var currentEtag = xhr.getResponseHeader('ETag'); //current ETag from JSON data
+      var storedEtag = localStorage.getItem('etag'); //localStorage ETag
 
-    }
+      //If localStorage exists and the etags in local storage and the json file match, then we need to retrieve the data from localStorage instead of having to go out the server to retrieve the data everytime:
+      if (localStorage.rawData && storedEtag === currentEtag) {
+        console.log('local storage!');
+        var retrievedData = localStorage.getItem('rawData'); //retrieve from local storage
+        var parsedJSON = JSON.parse(retrievedData); //parse the stringified data
+        loadAll(parsedJSON); //call loadAll function and pass in data from local storage
+        callback(); //call the callback function
+      } else { //If localStorage data doesn't exist, get the data from the JSON file.
+        // $.getJSON('/data/projectdata.json', function(jsonData, status, xhr) {
+        //   var currentEtag = xhr.getResponseHeader('ETag'); //grabbing current ETag and caching
+        //   var storedEtag = localStorage.getItem('etag'); //retrieving localStorage ETag and caching
+        console.log('Retrieved data from json file');
+        storedEtag = xhr.getResponseHeader('ETag'); //retrieve ETag from XHR object
+        loadAll(rawData); //calling the loadAll function and passing in the raw data
+        //*Cache in localStorage to skip the server call:
+        var storedData = JSON.stringify(rawData); //Stringify raw data in JSON format
+        localStorage.setItem('rawData', storedData); //Stores stringified data in localStorage
+        localStorage.setItem('etag', storedEtag); //Set the ETag from XHR object as new localStorage ETag
+
+        callback(); //call the callback function
+      }
+    });
   };
 
   //Create a Project.loadAll method (loadAll is just making all the articles)
