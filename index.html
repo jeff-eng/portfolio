@@ -30,10 +30,10 @@
         <h1>Jeff Eng</h1>
         <nav class="main-nav">
           <ul class="navigation-list">
-            <li class="tab" data-navigation="about"><a href="#">About</a></li>
-            <li class="tab" data-navigation="projects"><a href="#">Projects</a></li>
-            <li class="tab" data-navigation="contact"><a href="#">Contact</a></li>
-            <li class="tab" data-navigation="profile"><a href="#">Profile</a></li>
+            <li class="tab" data-navigation="about"><a href="/">About</a></li>
+            <li class="tab" data-navigation="projects"><a href="/projects">Projects</a></li>
+            <li class="tab" data-navigation="contact"><a href="/contact">Contact</a></li>
+            <li class="tab" data-navigation="profile"><a href="/profile">Profile</a></li>
           </ul>
         </nav>
       </header>
@@ -81,9 +81,13 @@
     </footer>
     <script type="text/javascript" src="vendor/scripts/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="vendor/scripts/handlebars-v4.0.5.js"></script>
-    <!-- <script type="text/javascript" src="scripts/projectdata.js"></script> -->
+    <script type="text/javascript" src="vendor/scripts/page.js"></script>
     <script type="text/javascript" src="scripts/project.js"></script>
     <script type="text/javascript" src="scripts/projectView.js"></script>
-    <script>Project.fetchAll(projectView.init);</script>
+    <script type="text/javascript" src="scripts/aboutController.js"></script>
+    <script type="text/javascript" src="scripts/projectController.js"></script>
+    <script type="text/javascript" src="scripts/contactController.js"></script>
+    <script type="text/javascript" src="scripts/profileController.js"></script>
+    <script type="text/javascript" src="scripts/routes.js"></script>
   </body>
 </html>
