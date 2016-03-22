@@ -1,8 +1,9 @@
 (function(module) {
   var projectController = {};
 
+  Project.fetchAll(projectView.init);
+  
   projectController.index = function() {
-    Project.fetchAll(projectView.init);
     $('.tab-sections').hide();
     $('#projects').fadeIn();
   };
