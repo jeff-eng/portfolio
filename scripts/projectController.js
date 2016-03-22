@@ -1,5 +1,5 @@
 (function(module) {
-  var projectController = {};
+  var controller = {};
 
   controller.about = function() {
     $('.tab-sections').hide();
@@ -22,5 +22,5 @@
     $('#contact').fadeIn();
   };
 
-  module.projectController = projectController;
+  module.controller = controller;
 })(window);
