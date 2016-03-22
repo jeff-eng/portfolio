@@ -1,0 +1,28 @@
+.navigation-list li {
+  list-style-type: none;
+  display: inline;
+  padding: 1%;
+  color: #52FFB8;
+}
+
+.top-header {
+  margin-top: -20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1098F7;
+  padding-left: 5%;
+}
+
+.social-links li {
+  padding: 3px;
+  display: block;
+}
+
+.contact-section {
+  margin-left: 5px;
+  line-height: 5px;
+}
+
+.contact-section a {
+  margin-left: 10px;
+}
