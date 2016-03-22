@@ -2,14 +2,14 @@
   var projectView = {};
 
   // Fades in only the tab that was clicked and hides the rest
-  projectView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function() {
-      $('.tab-sections').hide();
-      $('#' + $(this).data('navigation')).fadeIn();
-    });
-
-    $('.main-nav .tab:first').click();
-  };
+  // projectView.handleMainNav = function() {
+  //   $('.main-nav').on('click', '.tab', function() {
+  //     $('.tab-sections').hide();
+  //     $('#' + $(this).data('navigation')).fadeIn();
+  //   });
+  //
+  //   $('.main-nav .tab:first').click();
+  // };
 
   //Populates the Filters
   projectView.populateFilters = function() {
@@ -64,7 +64,7 @@
     projectView.populateFilters();
     projectView.handleCategoryFilter();
     projectView.handleProjectNameFilter();
-    projectView.handleMainNav();
+    // projectView.handleMainNav();
   };
   module.projectView = projectView; //This exposes the projectView object to the global space
 })(window);

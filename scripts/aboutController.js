@@ -1,26 +1,10 @@
 (function(module) {
-  var controller = {};
+  var aboutController = {};
 
-  controller.about = function() {
+  aboutController.index = function() {
     $('.tab-sections').hide();
     $('#about').fadeIn();
   };
 
-  controller.profile = function() {
-    $('.tab-sections').hide();
-    $('#profile').fadeIn();
-  };
-
-  controller.projects = function() {
-    Project.fetchAll(projectView.init);
-    $('.tab-sections').hide();
-    $('#projects').fadeIn();
-  };
-
-  controller.contact = function() {
-    $('.tab-sections').hide();
-    $('#contact').fadeIn();
-  };
-
-  module.controller = controller;
+  module.aboutController = aboutController;
 })(window);

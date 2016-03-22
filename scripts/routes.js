@@ -1,6 +1,6 @@
-page('/', controller.about);
-page('/projects', controller.projects);
-page('/contact', controller.contact);
-page('/profile', controller.profile);
+page('/', aboutController.index);
+page('/projects', projectController.index);
+page('/contact', contactController.index);
+page('/profile', profileController.index);
 
 page();
