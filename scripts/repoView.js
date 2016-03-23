@@ -5,7 +5,7 @@
     var $github = $('#github');
 
     $github.find('ul').empty();
-    $github.show().siblings().hide();
+    $github.show();
   };
 
   var render = Handlebars.compile($('#repo-template').text());
