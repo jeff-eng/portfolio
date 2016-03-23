@@ -58,6 +58,7 @@
   };
 
   projectView.init = function (){ // Calls all the methods declared above
+    //**TODO: Empty the existing projects rendered 
     Project.all.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
