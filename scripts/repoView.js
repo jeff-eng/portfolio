@@ -2,10 +2,10 @@
   var repoView = {};
 
   var ui = function() {
-    var $about = $('#about');
+    var $github = $('#github');
 
-    $about.find('ul').empty(); // need to find out which elements on the DOM to target
-    $about.show().siblings().hide();
+    $github.find('ul').empty();
+    $github.show().siblings().hide();
   };
 
   var render = Handlebars.compile($('#repo-template').text());
@@ -13,8 +13,10 @@
   repoView.index = function() {
     ui();
 
-    $('#about ul').append(
+    $('#github ul').append(
       repos.with('name').map(render)
     );
   };
+
+  module.repoView = repoView;
 })(window);
