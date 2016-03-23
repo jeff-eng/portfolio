@@ -9,5 +9,6 @@
     $('#projects').fadeIn();
     repos.requestRepos(repoView.index);
   };
+  
   module.projectController = projectController;
 })(window);
