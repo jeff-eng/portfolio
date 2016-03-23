@@ -1,12 +1,14 @@
 (function(module) {
   var projectController = {};
 
-  Project.fetchAll(projectView.init);
-  
+
   projectController.index = function() {
+    $('.appendedprojects').remove();
+    Project.fetchAll(projectView.init);
     $('.tab-sections').hide();
     $('#projects').fadeIn();
+    repos.requestRepos(repoView.index);
   };
-
+  
   module.projectController = projectController;
 })(window);

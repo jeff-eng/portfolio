@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
     <script id="project-template" type="text/x-handlebars-template">
-      <article data-category="{{category}}" data-projectname="{{projectName}}">
+      <article data-category="{{category}}" data-projectname="{{projectName}}" class="appendedprojects">
         <header>
           <h3><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
           <div class="byline">
@@ -22,6 +22,17 @@
         </header>
         <section class="article-body">{{{body}}}</section>
       </article>
+    </script>
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3><span class="fa fa-github"></span>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
     </script>
   </head>
   <body>
@@ -57,6 +68,13 @@
               </select>
             </li>
           </ul>
+        </div>
+      </section>
+      <section id="github" class="tab-sections">
+        <h1>My GitHub Repo Feed:</h1>
+        <ul>
+          <li></li>
+        </ul>
       </section>
       <section id="contact" class="tab-sections contact-section">
         <h2>Contact Information</h2>
@@ -79,15 +97,18 @@
     <footer>
       &copy; 2016 Jeff Eng
     </footer>
-    <script type="text/javascript" src="vendor/scripts/jquery-2.2.1.min.js"></script>
-    <script type="text/javascript" src="vendor/scripts/handlebars-v4.0.5.js"></script>
-    <script type="text/javascript" src="vendor/scripts/page.js"></script>
-    <script type="text/javascript" src="scripts/project.js"></script>
-    <script type="text/javascript" src="scripts/projectView.js"></script>
-    <script type="text/javascript" src="scripts/aboutController.js"></script>
-    <script type="text/javascript" src="scripts/projectController.js"></script>
-    <script type="text/javascript" src="scripts/contactController.js"></script>
-    <script type="text/javascript" src="scripts/profileController.js"></script>
-    <script type="text/javascript" src="scripts/routes.js"></script>
+    <script type="text/javascript" src="/vendor/scripts/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/vendor/scripts/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript" src="/vendor/scripts/page.js"></script>
+    <script type="text/javascript" src="/scripts/githubToken.js"></script>
+    <script type="text/javascript" src="/scripts/project.js"></script>
+    <script type="text/javascript" src="/scripts/projectView.js"></script>
+    <script type="text/javascript" src="/scripts/projectController.js"></script>
+    <script type="text/javascript" src="/scripts/contactController.js"></script>
+    <script type="text/javascript" src="/scripts/profileController.js"></script>
+    <script type="text/javascript" src="/scripts/repo.js"></script>
+    <script type="text/javascript" src="/scripts/repoView.js"></script>
+    <script type="text/javascript" src="/scripts/aboutController.js"></script>
+    <script type="text/javascript" src="/scripts/routes.js"></script>
   </body>
 </html>
