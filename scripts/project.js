@@ -44,6 +44,7 @@
       return (new Date(b.createdOn)) - (new Date(a.createdOn));
     });
 
+    Project.all = [];
     projectdata.forEach(function(ele) { //
       Project.all.push(new Project(ele)); // here a new project is being instantiated with the
     });

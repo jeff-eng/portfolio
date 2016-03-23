@@ -6,7 +6,7 @@
     $('#about').fadeIn();
   };
 
-  repos.requestRepos(repoView.index);
+  // repos.requestRepos(repoView.index);
 
   module.aboutController = aboutController;
 })(window);

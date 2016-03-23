@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
     <script id="project-template" type="text/x-handlebars-template">
-      <article data-category="{{category}}" data-projectname="{{projectName}}">
+      <article data-category="{{category}}" data-projectname="{{projectName}}" class="appendedprojects">
         <header>
           <h3><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
           <div class="byline">
@@ -25,9 +25,8 @@
     </script>
     <script id="repo-template" type="text/x-handlebars-template">
       <li>
-        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <a href="{{html_url}}" target="_blank"><h3><span class="fa fa-github"></span>{{name}}</h3></a>
         <p>Description: {{description}}</p>
-        <p>Language: {{language}}</p>
         <p>Created: {{created_at}}</p>
         <p>Last updated: {{updated_at}}</p>
         {{#if watchers_count}}
@@ -53,12 +52,6 @@
         <p>Hi, I'm Jeff Eng.</p>
         <p>I'm a web developer from Seattle. I like building web applications that empower people to make better decisions with organized information. I also love learning new things and solving problems; two things which are never in short supply in world of web development.
         <p>My coding powers are mainly fueled by banh mi sandwiches. And when I'm not busy coding, I enjoy playing basketball, getting outside to run or ride my bike, reading, and some occasional <a href="https://www.flickr.com/jw7eng">photography.</a></p>
-        <section id="github">
-          <h1>Check out my Projects on GitHub:</h1>
-          <ul>
-            <li>Coding</li>
-          </ul>
-        </section>
       </section>
       <section id="projects" data-content="projects" class="tab-sections">
         <h2>Projects</h2>
@@ -76,6 +69,12 @@
             </li>
           </ul>
         </div>
+      </section>
+      <section id="github" class="tab-sections">
+        <h1>My GitHub Repo Feed:</h1>
+        <ul>
+          <li></li>
+        </ul>
       </section>
       <section id="contact" class="tab-sections contact-section">
         <h2>Contact Information</h2>
