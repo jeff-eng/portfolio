@@ -58,14 +58,13 @@
   };
 
   projectView.init = function (){ // Calls all the methods declared above
-    //**TODO: Empty the existing projects rendered 
+    //**TODO: Empty the existing projects rendered
     Project.all.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
     projectView.populateFilters();
     projectView.handleCategoryFilter();
     projectView.handleProjectNameFilter();
-    // projectView.handleMainNav();
   };
   module.projectView = projectView; //This exposes the projectView object to the global space
 })(window);
