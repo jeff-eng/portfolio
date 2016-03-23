@@ -3,7 +3,7 @@
 
 
   projectController.index = function() {
-    Project.fetchAll(projectView.init); //**DONE**: This needs to go back inside the projectController.index function
+    Project.fetchAll(projectView.init);
     $('.tab-sections').hide();
     $('#projects').fadeIn();
   };
