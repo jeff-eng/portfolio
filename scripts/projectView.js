@@ -1,16 +1,6 @@
 (function(module) {
   var projectView = {};
 
-  // Fades in only the tab that was clicked and hides the rest
-  // projectView.handleMainNav = function() {
-  //   $('.main-nav').on('click', '.tab', function() {
-  //     $('.tab-sections').hide();
-  //     $('#' + $(this).data('navigation')).fadeIn();
-  //   });
-  //
-  //   $('.main-nav .tab:first').click();
-  // };
-
   //Populates the Filters
   projectView.populateFilters = function() {
     $('article').each(function() {
@@ -59,8 +49,10 @@
 
   projectView.init = function (){ // Calls all the methods declared above
     //**TODO: Empty the existing projects rendered
+    var $projects = $('#projects');
+    $projects.empty(); // Added this in to remove the existing projects.
     Project.all.forEach(function(a){
-      $('#projects').append(a.toHtml());
+      $projects.append(a.toHtml());
     });
     projectView.populateFilters();
     projectView.handleCategoryFilter();
