@@ -4,15 +4,13 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.ajax({
-      url: 'https://api.github.com/users/jeff-eng/repos?per_page=3&sort=updated',
-      type: 'GET',
-      headers: {'Authorization': 'token ' + githubToken},
-      success: function(data, message, xhr) {
-        repos.all = data;
-        console.log(data);
-      }
-    }).done(callback);
+    $.get('github/users/jeff-eng/repos' +
+            '?per_page=50' +
+            '&sort=updated')
+        .done(function(data, message, xhr) {
+          repos.all = data;
+        })
+        .done(callback);
   };
 
   repos.with = function(attr) {
