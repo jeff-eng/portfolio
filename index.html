@@ -2,33 +2,113 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Portfolio - Jeff Eng</title>
+    <title>Jeff Eng: Web Developer</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato' type='text/css'>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/state.css">
+    <script id="project-template" type="text/x-handlebars-template">
+      <article data-category="{{category}}" data-projectname="{{projectName}}" class="appendedprojects">
+        <header>
+          <h3><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
+          <div class="byline">
+            Developed by <span>{{developer}}</span>
+            <time pubdate datetime="{{createdOn}}">{{publishtime}}</time>
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+      </article>
+    </script>
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3><span class="fa fa-github"></span>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
   </head>
   <body>
     <main>
-      <header>
+      <header class="top-header">
         <h1>Jeff Eng</h1>
-      </header>
         <nav class="main-nav">
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="http://twitter.com/elev8eng">Twitter</a></li>
-            <li><a href="https://github.com/jeff-eng">GitHub</a></li>
+          <ul class="navigation-list">
+            <li class="tab" data-navigation="about"><a href="/">About</a></li>
+            <li class="tab" data-navigation="projects"><a href="/projects">Projects</a></li>
+            <li class="tab" data-navigation="contact"><a href="/contact">Contact</a></li>
+            <li class="tab" data-navigation="profile"><a href="/profile">Profile</a></li>
           </ul>
         </nav>
-        <section id="projects">
-          <article class="template" data-category="cat">
-              <h1>Title</h1>
-        </section>
-            <section class="projects-body"></section>
+      </header>
+      <section id="about" class="tab-sections">
+        <p>Hi, I'm Jeff Eng.</p>
+        <p>I'm a web developer from Seattle. I like building web applications that empower people to make better decisions with organized information. I also love learning new things and solving problems; two things which are never in short supply in world of web development.
+        <p>My coding powers are mainly fueled by banh mi sandwiches. And when I'm not busy coding, I enjoy playing basketball, getting outside to run or ride my bike, reading, and some occasional <a href="https://www.flickr.com/jw7eng">photography.</a></p>
+      </section>
+      <section id="projects" data-content="projects" class="tab-sections">
+        <h2>Projects</h2>
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="category-filter">
+                <option value="">Filter by Individual or Team Project</option>
+              </select>
+            </li>
+            <li>
+              <select id="projectname-filter">
+                <option value="">Filter by Project Name</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="github" class="tab-sections">
+        <h1>My GitHub Repo Feed:</h1>
+        <ul>
+          <li></li>
+        </ul>
+      </section>
+      <section id="contact" class="tab-sections contact-section">
+        <h2>Contact Information</h2>
+        <ul>
+          <li class="fa fa-envelope"><a href="mailto:me@jeffeng.com"> me@jeffeng.com</a></li>
+        </ul>
+        <ul class="social-links">
+          <h3>Social</h3>
+          <li class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/engjeff">LinkedIn</a></li>
+          <li class="fa fa-twitter-square"><a href="https://www.twitter.com/elev8eng">Twitter</a></li>
+          <li class="fa fa-flickr"><a href="https://www.flickr.com/jw7eng">Flickr</a></li>
+          <li class="fa fa-github-square"><a href="https://www.github.com/jeff-eng">GitHub</a></li>
+        </ul>
+      </section>
+      <section id="profile" class="tab-sections">
+        <h2>Profile</h2>
+        <p>PLACEHOLDER CONTENT FOR MY PROFILE SECTION!!!</p>
+      </section>
     </main>
     <footer>
       &copy; 2016 Jeff Eng
     </footer>
-    <script type="text/javascript" src="project.js"></script>
+    <script type="text/javascript" src="/vendor/scripts/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/vendor/scripts/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript" src="/vendor/scripts/page.js"></script>
+    <script type="text/javascript" src="/scripts/githubToken.js"></script>
+    <script type="text/javascript" src="/scripts/project.js"></script>
+    <script type="text/javascript" src="/scripts/projectView.js"></script>
+    <script type="text/javascript" src="/scripts/projectController.js"></script>
+    <script type="text/javascript" src="/scripts/contactController.js"></script>
+    <script type="text/javascript" src="/scripts/profileController.js"></script>
+    <script type="text/javascript" src="/scripts/repo.js"></script>
+    <script type="text/javascript" src="/scripts/repoView.js"></script>
+    <script type="text/javascript" src="/scripts/aboutController.js"></script>
+    <script type="text/javascript" src="/scripts/routes.js"></script>
   </body>
 </html>
