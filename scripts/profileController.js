@@ -6,5 +6,9 @@
     $('#profile').fadeIn();
   };
 
+//TODO: create projectController.loadByProjectName function
+
+//TODO: create projectController.loadByProjectCategory function
+
   module.profileController = profileController;
 })(window);
