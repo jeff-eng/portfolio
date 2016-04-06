@@ -1,23 +1,21 @@
-* {
+body {
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Lato', sans-serif;
   color: #424242;
-
-  /*USING THIS TEMPORARILY TO VISUALIZE ELEMENTS ON PAGE*/
-  /*outline: 2px orange dotted;*/
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.2em;
+}
+
+img {
+  max-width: 100%;
 }
 
 footer {
   text-align: center;
-}
-
-body {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 li {
@@ -27,11 +25,12 @@ li {
 /*-----LINK STYLING-----*/
 a, a:link, a:active {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
   text-decoration: none;
-  color: #48E5C2;
+  color: #F2F2F2;
 }
 
 a:visited {
