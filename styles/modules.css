@@ -11,7 +11,7 @@
   margin-right: auto;
   background-color: #1098F7;
   border-bottom: 5px solid #48E5C2;
-  color: 
+  color:
   /*padding-left: 5%;*/
 }
 
@@ -32,4 +32,38 @@
 .tab-sections {
   margin-left: 5%;
   margin-right: 5%;
+}
+
+#menu {
+    display: block;
+    width: 300px;
+    min-height: 100%;
+    top: 0;
+    z-index: 9999;
+    position:fixed;
+    background-color: rgba(0,0,0,0.8);
+}
+
+#menu  .toggle {
+    top: 0;
+    left: 300px;
+    padding:10px;
+    position: absolute;
+}
+
+#toggle {
+  display: none;
+}
+
+/* Pushing the Menu off the canves */
+#menu {
+    left: -300px; /* must be the same as the width of the menu */
+    -webkit-transition: left 1s;
+    transition: left 1s;
+}
+/* Showing the menu then the Checkbox is checked */
+#toggle:checked + #menu {
+    left: 0;
+    -webkit-transition: left 1s; /* Safari 3.1 to 6.0 */
+    transition: left 1s;
 }
