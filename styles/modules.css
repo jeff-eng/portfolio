@@ -52,7 +52,7 @@
 #menu  .toggle {
     top: 0;
     left: 300px;
-    padding:10px;
+    padding: 10px;
     position: absolute;
 }
 
@@ -99,11 +99,5 @@
 
   .byline {
     border-bottom: none;
-  }
-}
-
-@media only screen and (min-width: 999px) {
-  .project-image {
-    clear: right;
   }
 }
