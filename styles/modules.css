@@ -1,7 +1,7 @@
 .navigation-list li {
   list-style-type: none;
   display: block;;
-  padding: 1%;
+  padding: 5%;
   color: #52FFB8;
 }
 
@@ -34,6 +34,11 @@
   margin-right: 5%;
 }
 
+.byline {
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
 #menu {
     display: block;
     width: 300px;
@@ -55,15 +60,50 @@
   display: none;
 }
 
-/* Pushing the Menu off the canves */
+/* Pushing the Menu off the canvas */
 #menu {
     left: -300px; /* must be the same as the width of the menu */
     -webkit-transition: left 1s;
     transition: left 1s;
 }
+
 /* Showing the menu then the Checkbox is checked */
 #toggle:checked + #menu {
     left: 0;
     -webkit-transition: left 1s; /* Safari 3.1 to 6.0 */
     transition: left 1s;
+    color: #48E5C2;
+}
+
+/*Media Queries*/
+@media only screen and (min-width: 640px) {
+
+  .project-image {
+    float: right;
+    text-align: right;
+    width: 265px;
+    height: auto;
+    margin-top: -10px;
+    padding-left: 10px;
+  }
+
+  .project-description {
+    margin-top: 25px;
+    margin-bottom: 116px;
+  }
+
+  .project-heading {
+    padding-top: 5px;
+    border-top: 2px solid black;
+  }
+
+  .byline {
+    border-bottom: none;
+  }
+}
+
+@media only screen and (min-width: 999px) {
+  .project-image {
+    clear: right;
+  }
 }

@@ -1,0 +1,3 @@
+.toggle:checked > fa-bars {
+  transform:rotate(90deg);
+}

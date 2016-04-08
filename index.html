@@ -15,13 +15,13 @@
     <script id="project-template" type="text/x-handlebars-template">
       <article data-category="{{category}}" data-projectname="{{projectName}}" class="appendedprojects">
         <header>
-          <h3><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
-          <div class="byline">
-            Developed by <span>{{developer}}</span>
-            <time pubdate datetime="{{createdOn}}">{{publishtime}}</time>
-          </div>
+          <h3 class="project-heading"><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
         </header>
         <section class="article-body">{{{body}}}</section>
+        <div class="byline">
+          <!-- <h4></h4> -->
+          <time pubdate datetime="{{createdOn}}">{{publishtime}}</time> by <span>{{developer}}</span>
+        </div>
       </article>
     </script>
     <script id="repo-template" type="text/x-handlebars-template">
