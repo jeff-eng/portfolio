@@ -39,6 +39,9 @@
   border-bottom: 2px solid black;
 }
 
+.project-image {
+  display: none;
+}
 #menu {
     display: block;
     width: 300px;
@@ -85,6 +88,7 @@
     height: auto;
     margin-top: -10px;
     padding-left: 10px;
+    display: block;
   }
 
   .project-description {
