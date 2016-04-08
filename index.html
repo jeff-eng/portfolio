@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Jeff Eng: Web Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato' type='text/css'>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -14,13 +15,13 @@
     <script id="project-template" type="text/x-handlebars-template">
       <article data-category="{{category}}" data-projectname="{{projectName}}" class="appendedprojects">
         <header>
-          <h3><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
-          <div class="byline">
-            Developed by <span>{{developer}}</span>
-            <time pubdate datetime="{{createdOn}}">{{publishtime}}</time>
-          </div>
+          <h3 class="project-heading"><a href="{{githubRepoUrl}}">{{projectName}}</a></h3>
         </header>
         <section class="article-body">{{{body}}}</section>
+        <div class="byline">
+          <!-- <h4></h4> -->
+          <time pubdate datetime="{{createdOn}}">{{publishtime}}</time> by <span>{{developer}}</span>
+        </div>
       </article>
     </script>
     <script id="repo-template" type="text/x-handlebars-template">
@@ -38,19 +39,24 @@
   <body>
     <main>
       <header class="top-header">
-        <h1>Jeff Eng</h1>
-        <nav class="main-nav">
-          <ul class="navigation-list">
-            <li class="tab" data-navigation="about"><a href="/">About</a></li>
-            <li class="tab" data-navigation="projects"><a href="/projects">Projects</a></li>
-            <li class="tab" data-navigation="contact"><a href="/contact">Contact</a></li>
-            <li class="tab" data-navigation="profile"><a href="/profile">Profile</a></li>
-          </ul>
-        </nav>
+        <h1 id="name-header">Jeff Eng</h1>
+        <h2 id="title-header">Web Developer</h2>
+        <input type="checkbox" name="menu" value="toggle" id="toggle">
+        <section id="menu">
+          <label class="toggle" for="toggle"><i class="fa fa-2x fa-bars"></i></label>
+          <nav class="main-nav">
+            <ul class="navigation-list">
+              <li class="tab" data-navigation="about"><a href="/">About</a></li>
+              <li class="tab" data-navigation="projects"><a href="/projects">Projects</a></li>
+              <li class="tab" data-navigation="contact"><a href="/contact">Contact</a></li>
+              <li class="tab" data-navigation="profile"><a href="/profile">Profile</a></li>
+            </ul>
+          </nav>
+      </section>
       </header>
       <section id="about" class="tab-sections">
         <p>Hi, I'm Jeff Eng.</p>
-        <p>I'm a web developer from Seattle. I like building web applications that empower people to make better decisions with organized information. I also love learning new things and solving problems; two things which are never in short supply in world of web development.
+        <p>I'm a web developer from Seattle. I like building web applications that empower people to make better decisions with organized information. I also love learning new things and solving problems; two things which are never in short supply in world of web development.</p>
         <p>My coding powers are mainly fueled by banh mi sandwiches. And when I'm not busy coding, I enjoy playing basketball, getting outside to run or ride my bike, reading, and some occasional <a href="https://www.flickr.com/jw7eng">photography.</a></p>
       </section>
       <section id="projects" data-content="projects" class="tab-sections">

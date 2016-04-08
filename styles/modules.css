@@ -1,7 +1,7 @@
 .navigation-list li {
   list-style-type: none;
-  display: inline;
-  padding: 1%;
+  display: block;;
+  padding: 5%;
   color: #52FFB8;
 }
 
@@ -10,7 +10,9 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #1098F7;
-  padding-left: 5%;
+  border-bottom: 5px solid #48E5C2;
+  color:
+  /*padding-left: 5%;*/
 }
 
 .social-links li {
@@ -25,4 +27,81 @@
 
 .contact-section a {
   margin-left: 10px;
+}
+
+.tab-sections {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.byline {
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.project-image {
+  display: none;
+}
+#menu {
+    display: block;
+    width: 300px;
+    min-height: 100%;
+    top: 0;
+    z-index: 9999;
+    position:fixed;
+    background-color: rgba(0,0,0,0.8);
+}
+
+#menu  .toggle {
+    top: 0;
+    left: 300px;
+    padding: 10px;
+    position: absolute;
+}
+
+#toggle {
+  display: none;
+}
+
+/* Pushing the Menu off the canvas */
+#menu {
+    left: -300px; /* must be the same as the width of the menu */
+    -webkit-transition: left 1s;
+    transition: left 1s;
+}
+
+/* Showing the menu then the Checkbox is checked */
+#toggle:checked + #menu {
+    left: 0;
+    -webkit-transition: left 1s; /* Safari 3.1 to 6.0 */
+    transition: left 1s;
+    color: #48E5C2;
+}
+
+/*Media Queries*/
+@media only screen and (min-width: 640px) {
+
+  .project-image {
+    float: right;
+    text-align: right;
+    width: 265px;
+    height: auto;
+    margin-top: -10px;
+    padding-left: 10px;
+    display: block;
+  }
+
+  .project-description {
+    margin-top: 25px;
+    margin-bottom: 116px;
+  }
+
+  .project-heading {
+    padding-top: 5px;
+    border-top: 2px solid black;
+  }
+
+  .byline {
+    border-bottom: none;
+  }
 }
