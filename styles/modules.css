@@ -66,15 +66,15 @@
 /* Pushing the Menu off the canvas */
 #menu {
     left: -300px; /* must be the same as the width of the menu */
-    -webkit-transition: left 1s;
-    transition: left 1s;
+    -webkit-transition: left 0.5s;
+    transition: left 0.5s;
 }
 
 /* Showing the menu then the Checkbox is checked */
 #toggle:checked + #menu {
     left: 0;
-    -webkit-transition: left 1s; /* Safari 3.1 to 6.0 */
-    transition: left 1s;
+    -webkit-transition: left 0.5s; /* Safari 3.1 to 6.0 */
+    transition: left 0.5s;
     color: #48E5C2;
 }
 
