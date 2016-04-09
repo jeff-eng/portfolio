@@ -1,0 +1,58 @@
+/*Media Queries*/
+@media only screen and (min-width: 640px) {
+
+  .project-image {
+    float: right;
+    text-align: right;
+    width: 265px;
+    height: auto;
+    margin-top: -10px;
+    padding-left: 10px;
+    display: block;
+  }
+
+  .project-description {
+    margin-top: 25px;
+    margin-bottom: 116px;
+  }
+
+  .project-heading {
+    padding-top: 5px;
+    border-top: 2px solid black;
+  }
+
+  .byline {
+    border-bottom: none;
+  }
+
+  #desktop-menu {
+    display: inline !important;
+  }
+
+  .desktop-nav-list > .tab {
+    display: inline;
+    margin-right: 5%;
+    color: #48E5C2;
+  }
+
+/*hides the nav drawer menu on larger than 640px*/
+  #menu {
+    display: none;
+  }
+}
+
+/* Showing the menu then the Checkbox is checked */
+#toggle:checked + #menu {
+    left: 0;
+    -webkit-transition: left 0.5s; /* Safari 3.1 to 6.0 */
+    transition: left 0.5s;
+    color: #48E5C2;
+}
+
+#desktop-menu {
+  display: none;
+}
+
+#menu {
+  visibility: visible;
+}

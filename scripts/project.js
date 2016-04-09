@@ -10,7 +10,7 @@
 
   Project.prototype.toHtml = function() {
     var template = Handlebars.compile($('#project-template').html());
-    this.publishtime = 'about ' + parseInt((new Date() - new Date(this.createdOn)) / 60 / 60 / 24 / 1000) + ' days ago';
+    this.publishtime = 'Created about ' + parseInt((new Date() - new Date(this.createdOn)) / 60 / 60 / 24 / 1000) + ' days ago';
     return template(this);
   };
 
