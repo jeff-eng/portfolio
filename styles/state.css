@@ -24,6 +24,21 @@
   .byline {
     border-bottom: none;
   }
+
+  #desktop-menu {
+    display: inline !important;
+  }
+
+  .desktop-nav-list > .tab {
+    display: inline;
+    margin-right: 5%;
+    color: #48E5C2;
+  }
+
+/*hides the nav drawer menu on larger than 640px*/
+  #menu {
+    display: none;
+  }
 }
 
 /* Showing the menu then the Checkbox is checked */
@@ -32,4 +47,12 @@
     -webkit-transition: left 0.5s; /* Safari 3.1 to 6.0 */
     transition: left 0.5s;
     color: #48E5C2;
+}
+
+#desktop-menu {
+  display: none;
+}
+
+#menu {
+  visibility: visible;
 }
