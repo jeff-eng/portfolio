@@ -1,9 +1,9 @@
 (function(module) {
 
-  function Project(opts) { //Project object constructor function
-    for (var key in opts) {
-      this[key] = opts[key];
-    }
+  function Project(opts) {
+    Object.keys(opts).forEach(function(e, index, keys) {
+      this[e] = opts[e];
+    },this);
   }
 
   Project.all = [];
