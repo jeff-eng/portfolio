@@ -40,6 +40,17 @@
     );
   };
 
+  Project.prototype.deleteRecord = function(callback) {
+    webDB.execute(
+      [
+        {
+          'sql': 'DELETE FROM projects WHERE id = ?;',
+          'data': [this.id]
+        }
+      ],
+      callback
+    );
+  };
 
   module.Project = Project;
 })(window);
