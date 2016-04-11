@@ -90,5 +90,19 @@
     });
   };
 
+  Project.findWhere = function(field, value, callback) {
+    webDB.execute(
+      [
+        {
+          sql: 'SELECT * FROM projects WHERE ' + field + ' = ?;',
+          data: [value]
+        }
+      ],
+      callback
+    );
+  };
+
+  
+
   module.Project = Project;
 })(window);
